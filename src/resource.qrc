@@ -1,0 +1,29 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>res/icons/account-ico.png</file>
+        <file>res/icons/email-ico.png</file>
+        <file>res/icons/prefs-ico.png</file>
+        <file>res/icons/webdisk-ico.png</file>
+        <file>res/icons/folder-ico.png</file>
+        <file>res/icons/membership-ico.png</file>
+        <file>res/icons/sms-ico.png</file>
+        <file>res/icons/outbox-ico.png</file>
+        <file>res/icons/addressbook-ico.png</file>
+        <file>res/icons/addr-priv-ico.png</file>
+        <file>res/icons/addr-work-ico.png</file>
+        <file>res/icons/sms-send-ico.png</file>
+        <file>res/icons/refresh-icon.png</file>
+        <file>res/icons/order-ico.png</file>
+        <file>res/icons/load16-icon.gif</file>
+        <file>res/icons/compose-ico.png</file>
+        <file>res/icons/exit-ico.png</file>
+        <file>res/icons/sync-ico.png</file>
+        <file>res/icons/conflict-ico.png</file>
+        <file>res/icons/fax-ico.png</file>
+        <file>res/icons/next-ico.png</file>
+        <file>res/icons/prev-ico.png</file>
+        <file>res/icons/online-webdisk-ico.png</file>
+        <file>res/icons/update-ico.png</file>
+        <file>res/icons/sync-anim.gif</file>
+    </qresource>
+</RCC>

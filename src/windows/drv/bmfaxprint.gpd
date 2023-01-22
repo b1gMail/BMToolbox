@@ -1,0 +1,71 @@
+*GPDSpecVersion: "1.0"
+*GPDFileVersion: "1.00"
+*GPDFileName: "bmfaxprint.gpd"
+*Include: "STDNAMES.GPD"
+*ModelName: "BMToolbox Fax Printer"
+*MasterUnits: PAIR(203, 196)
+*PrinterType: PAGE
+*Feature: InputBin
+{
+    *rcNameID: =PAPER_SOURCE_DISPLAY
+}
+*Feature: Resolution
+{
+    *rcNameID: =RESOLUTION_DISPLAY
+    *DefaultOption: Option1
+    *Option: Option1
+    {
+        *Name: "203 x 196 " =DOTS_PER_INCH
+        *DPI: PAIR(203, 196)
+        *TextDPI: PAIR(203, 196)
+        *SpotDiameter: 100
+        *Command: CmdSendBlockData { *Cmd : "BD:N="  %d{NumOfDataBytes} ";L=" %d{RasterDataWidthInBytes} ";<0A>" }
+        *Command: CmdEndBlockData {*Cmd:""}
+    }
+}
+*Feature: PaperSize
+{
+    *rcNameID: =PAPER_SIZE_DISPLAY
+    *DefaultOption: A4
+    *Option: A4
+    {
+		*rcNameID: =RCID_DMPAPER_SYSTEM_NAME
+		*PrintableArea: PAIR(1678, 2292)
+		*PrintableOrigin: PAIR(0, 0)
+		*CursorOrigin: PAIR(0, 0)
+    }
+}
+*Command: CmdStartDoc
+{
+    *Order: DOC_SETUP.1
+    *Cmd: "SD;<0A>"
+}
+*Command: CmdStartPage
+{
+    *Order: PAGE_SETUP.1
+    *Cmd: "SP:N="  %d{PageNumber} ";<0A>"
+}
+*Command: CmdEndJob
+{
+    *Order: JOB_FINISH.1
+    *Cmd: "EJ;<0A>"
+}
+*Command: CmdEndPage
+{
+    *Order: PAGE_FINISH.1
+    *Cmd: "EP;<0A>"
+}
+*RasterSendAllData?:TRUE
+*CursorXAfterCR: AT_PRINTABLE_X_ORIGIN
+*XMoveThreshold: 0
+*YMoveThreshold: 0
+*XMoveUnit: 203
+*YMoveUnit: 196
+*Command: CmdCR { *Cmd : "" }
+*Command: CmdLF { *Cmd : "" }
+*Command: CmdFF { *Cmd : "" }
+*EjectPageWithFF?: FALSE
+*OutputDataFormat: H_BYTE
+*OptimizeLeftBound?: FALSE
+*CursorXAfterSendBlockData: AT_GRXDATA_ORIGIN
+*CursorYAfterSendBlockData: AUTO_INCREMENT

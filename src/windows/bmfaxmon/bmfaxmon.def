@@ -1,0 +1,5 @@
+LIBRARY BMFAXMON
+
+EXPORTS
+    InitializePrintMonitor2
+

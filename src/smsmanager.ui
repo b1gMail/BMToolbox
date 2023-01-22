@@ -1,0 +1,829 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SMSManager</class>
+ <widget class="QMainWindow" name="SMSManager">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>596</width>
+    <height>471</height>
+   </rect>
+  </property>
+  <property name="contextMenuPolicy">
+   <enum>Qt::NoContextMenu</enum>
+  </property>
+  <property name="windowTitle">
+   <string>SMS Manager</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="resource.qrc">
+    <normaloff>:/icons/res/icons/sms-ico.png</normaloff>:/icons/res/icons/sms-ico.png</iconset>
+  </property>
+  <property name="locale">
+   <locale language="English" country="UnitedStates"/>
+  </property>
+  <property name="unifiedTitleAndToolBarOnMac">
+   <bool>true</bool>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QStackedWidget" name="stackedWidget">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="page">
+       <layout class="QGridLayout" name="gridLayout_4">
+        <item row="1" column="0">
+         <spacer name="horizontalSpacer_5">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>228</width>
+            <height>29</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="1" column="1">
+         <widget class="QLabel" name="loadingLabel">
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="2">
+         <widget class="QLabel" name="label_5">
+          <property name="text">
+           <string>Loading...</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="3">
+         <spacer name="horizontalSpacer_6">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>227</width>
+            <height>29</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="0" column="1" colspan="2">
+         <spacer name="verticalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>140</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="2" column="1" colspan="2">
+         <spacer name="verticalSpacer">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>140</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="composePage">
+       <layout class="QGridLayout" name="gridLayout">
+        <item row="0" column="0">
+         <widget class="QLabel" name="label">
+          <property name="text">
+           <string>Type:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QComboBox" name="typeComboBox"/>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="fromNoLabel">
+          <property name="text">
+           <string>From:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="label_3">
+          <property name="text">
+           <string>To:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0" colspan="3">
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QLabel" name="charsLabel">
+            <property name="text">
+             <string>Characters:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QProgressBar" name="charBar">
+            <property name="maximum">
+             <number>100</number>
+            </property>
+            <property name="value">
+             <number>24</number>
+            </property>
+            <property name="format">
+             <string>%v / %m</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="sendSMSButton">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Send SMS</string>
+            </property>
+            <property name="icon">
+             <iconset resource="resource.qrc">
+              <normaloff>:/icons/res/icons/sms-send-ico.png</normaloff>:/icons/res/icons/sms-send-ico.png</iconset>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="2" column="2">
+         <widget class="QPushButton" name="toAddressbookButton">
+          <property name="text">
+           <string>Addressbook</string>
+          </property>
+          <property name="icon">
+           <iconset resource="resource.qrc">
+            <normaloff>:/icons/res/icons/addressbook-ico.png</normaloff>:/icons/res/icons/addressbook-ico.png</iconset>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QComboBox" name="fromNoPre">
+            <property name="sizeAdjustPolicy">
+             <enum>QComboBox::AdjustToContents</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="fromNo"/>
+          </item>
+         </layout>
+        </item>
+        <item row="2" column="1">
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <item>
+           <widget class="QComboBox" name="toNoPre">
+            <property name="sizeAdjustPolicy">
+             <enum>QComboBox::AdjustToContents</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="toNo"/>
+          </item>
+         </layout>
+        </item>
+        <item row="3" column="0" colspan="3">
+         <widget class="QPlainTextEdit" name="smsText"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="outboxPage">
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <widget class="QSplitter" name="splitter">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <widget class="QTreeWidget" name="outboxList">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="alternatingRowColors">
+            <bool>true</bool>
+           </property>
+           <property name="rootIsDecorated">
+            <bool>false</bool>
+           </property>
+           <property name="allColumnsShowFocus">
+            <bool>true</bool>
+           </property>
+           <property name="columnCount">
+            <number>4</number>
+           </property>
+           <column>
+            <property name="text">
+             <string>From</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>To</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Date</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Text</string>
+            </property>
+           </column>
+          </widget>
+          <widget class="QFrame" name="previewPanel">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: white;</string>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::Panel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Sunken</enum>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_2">
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_2">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="font">
+               <font>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Date:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QLabel" name="dateLabel">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="textFormat">
+               <enum>Qt::AutoText</enum>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="label_4">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="font">
+               <font>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>From:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLabel" name="fromLabel">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="textFormat">
+               <enum>Qt::AutoText</enum>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="label_6">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="font">
+               <font>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>To:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QLabel" name="toLabel">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="textFormat">
+               <enum>Qt::AutoText</enum>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0" colspan="2">
+             <widget class="QPlainTextEdit" name="outboxSMSText">
+              <property name="frameShape">
+               <enum>QFrame::NoFrame</enum>
+              </property>
+              <property name="readOnly">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <item>
+           <spacer name="horizontalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="refreshOutbox">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Refresh</string>
+            </property>
+            <property name="icon">
+             <iconset resource="resource.qrc">
+              <normaloff>:/icons/res/icons/refresh-icon.png</normaloff>:/icons/res/icons/refresh-icon.png</iconset>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="accountPage">
+       <layout class="QGridLayout" name="gridLayout_3">
+        <item row="1" column="0" colspan="3">
+         <widget class="QLabel" name="label_7">
+          <property name="text">
+           <string>You currently have an account balance of</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <spacer name="horizontalSpacer_3">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>234</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="4" column="1">
+         <widget class="QPushButton" name="chargeButton">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>Top up credits</string>
+          </property>
+          <property name="icon">
+           <iconset resource="resource.qrc">
+            <normaloff>:/icons/res/icons/order-ico.png</normaloff>:/icons/res/icons/order-ico.png</iconset>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="2">
+         <spacer name="horizontalSpacer_4">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>233</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="5" column="1">
+         <spacer name="verticalSpacer_4">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>113</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="3" column="0" colspan="3">
+         <widget class="QLabel" name="label_8">
+          <property name="text">
+           <string>credit(s).</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0" colspan="3">
+         <widget class="QLabel" name="balanceLabel">
+          <property name="font">
+           <font>
+            <pointsize>16</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>0</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <spacer name="verticalSpacer_3">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>137</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <property name="movable">
+    <bool>false</bool>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>32</width>
+     <height>32</height>
+    </size>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonTextUnderIcon</enum>
+   </property>
+   <property name="floatable">
+    <bool>false</bool>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionCompose_SMS"/>
+   <addaction name="actionSMS_Outbox"/>
+   <addaction name="actionAccount_Balance"/>
+  </widget>
+  <action name="actionCompose_SMS">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/icons/res/icons/sms-ico.png</normaloff>:/icons/res/icons/sms-ico.png</iconset>
+   </property>
+   <property name="text">
+    <string>Compose SMS</string>
+   </property>
+  </action>
+  <action name="actionSMS_Outbox">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/icons/res/icons/outbox-ico.png</normaloff>:/icons/res/icons/outbox-ico.png</iconset>
+   </property>
+   <property name="text">
+    <string>SMS Outbox</string>
+   </property>
+  </action>
+  <action name="actionAccount_Balance">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/icons/res/icons/membership-ico.png</normaloff>:/icons/res/icons/membership-ico.png</iconset>
+   </property>
+   <property name="text">
+    <string>Account Balance</string>
+   </property>
+  </action>
+ </widget>
+ <tabstops>
+  <tabstop>typeComboBox</tabstop>
+  <tabstop>fromNoPre</tabstop>
+  <tabstop>fromNo</tabstop>
+  <tabstop>toNoPre</tabstop>
+  <tabstop>toNo</tabstop>
+  <tabstop>toAddressbookButton</tabstop>
+  <tabstop>smsText</tabstop>
+  <tabstop>sendSMSButton</tabstop>
+  <tabstop>outboxList</tabstop>
+  <tabstop>outboxSMSText</tabstop>
+  <tabstop>refreshOutbox</tabstop>
+  <tabstop>chargeButton</tabstop>
+ </tabstops>
+ <resources>
+  <include location="resource.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>toAddressbookButton</sender>
+   <signal>clicked()</signal>
+   <receiver>SMSManager</receiver>
+   <slot>toAddressbook()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>99</x>
+     <y>76</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>450</x>
+     <y>465</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionCompose_SMS</sender>
+   <signal>triggered()</signal>
+   <receiver>SMSManager</receiver>
+   <slot>showComposePage()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>250</x>
+     <y>198</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionSMS_Outbox</sender>
+   <signal>triggered()</signal>
+   <receiver>SMSManager</receiver>
+   <slot>showOutboxPage()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>250</x>
+     <y>198</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionAccount_Balance</sender>
+   <signal>triggered()</signal>
+   <receiver>SMSManager</receiver>
+   <slot>showBalancePage()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>250</x>
+     <y>198</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>typeComboBox</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>SMSManager</receiver>
+   <slot>smsTypeChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>70</x>
+     <y>68</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>320</x>
+     <y>483</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>smsText</sender>
+   <signal>textChanged()</signal>
+   <receiver>SMSManager</receiver>
+   <slot>smsTextChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>99</x>
+     <y>80</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>177</x>
+     <y>566</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>sendSMSButton</sender>
+   <signal>clicked()</signal>
+   <receiver>SMSManager</receiver>
+   <slot>sendSMS()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>99</x>
+     <y>85</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>481</x>
+     <y>559</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>outboxList</sender>
+   <signal>itemSelectionChanged()</signal>
+   <receiver>SMSManager</receiver>
+   <slot>outboxItemSelected()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>108</x>
+     <y>89</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>217</x>
+     <y>518</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>refreshOutbox</sender>
+   <signal>clicked()</signal>
+   <receiver>SMSManager</receiver>
+   <slot>refreshOutbox()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>539</x>
+     <y>440</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>534</x>
+     <y>548</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chargeButton</sender>
+   <signal>clicked()</signal>
+   <receiver>SMSManager</receiver>
+   <slot>chargeAccount()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>296</x>
+     <y>294</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>317</x>
+     <y>526</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>toAddressbook()</slot>
+  <slot>showComposePage()</slot>
+  <slot>showBalancePage()</slot>
+  <slot>showOutboxPage()</slot>
+  <slot>smsTypeChanged(int)</slot>
+  <slot>smsTextChanged()</slot>
+  <slot>sendSMS()</slot>
+  <slot>outboxItemSelected()</slot>
+  <slot>refreshOutbox()</slot>
+  <slot>chargeAccount()</slot>
+ </slots>
+</ui>

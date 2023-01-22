@@ -1,0 +1,43 @@
+*PPD-Adobe: "4.3"
+*FormatVersion: "4.3"
+*LanguageEncoding: UTF-8
+*LanguageVersion: English
+*FileVersion: "1.0"
+*PSVersion: "(3017.102) 1"
+*PCFileName: "BMFaxPrint.ppd"
+*Product: "(BMFaxPrint Printer)"
+*ShortNickName: "BMFaxPrint"
+*NickName: "BMFaxPrint"
+*ModelName: "Fax Printer"
+*Manufacturer: "B1G Software"
+
+*DefaultResolution: 300dpi
+*LanguageLevel: "3"
+*ColorDevice: False
+*DefaultColorSpace: CMYK
+*LandscapeOrientation: Plus90
+*VariablePaperSize: False
+
+*cupsVersion: 1.1
+*cupsManualCopies: True
+*cupsFilter: "application/vnd.cups-postscript 0 pstopdffilter"
+
+*OpenUI *PageSize: PickOne
+*OrderDependency: 30 AnySetup *PageSize
+*DefaultPageSize: A4
+*PageSize A4: "<</PageSize[595 842]/ImagingBBox null>>setpagedevice"
+*CloseUI: *PageSize
+
+*DefaultImageableArea: A4
+*ImageableArea A4: "16.84 16.84 578.16 825.16 " 
+
+*OpenUI *PageRegion: A4
+*OrderDependency: 40 AnySetup *PageRegion
+*DefaultPageRegion: A4
+*PageRegion A4: "<</PageSize[595 842]/ImagingBBox null>>setpagedevice"
+*CloseUI: *PageRegion
+
+*DefaultPaperDimension: A4
+*PaperDimension A4: "595 842 " 
+
+*RequiresPageRegion All: True

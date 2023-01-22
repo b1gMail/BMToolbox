@@ -1,0 +1,24 @@
+[Version]
+Signature="$Windows NT$"
+Provider=%PMProducer%
+ClassGUID={4D36E979-E325-11CE-BFC1-08002BE10318}
+Class=Printer
+
+[Manufacturer]
+"B1G Software"=PortMonitors
+
+[PortMonitors]
+"BMToolbox Fax Port Monitor" = bmfaxmon
+
+[bmfaxmon]
+CopyFiles=@bmfaxmon.dll
+PortMonitorDll=bmfaxmon.dll
+
+[SourceDisksFiles]
+bmfaxmon.dll=1,,
+
+[SourceDisksNames]
+1="BMToolbox Fax Port Monitor Install Disk",,,
+
+[Strings]
+PMProducer="B1G Software"

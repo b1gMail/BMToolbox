@@ -1,0 +1,7 @@
+The .nsi file uses placeholders (like %%appName%%) which were auto-replaced by
+their respective values when generating the toolbox installer from the b1gMail
+ACP via the toolbox service hosted as a B1G Software web service.
+
+If you want to build a new toolbox version manually, you need to replace the
+values manually before building the setup via NSIS or write some sort of
+tool/script to do this for you.
